@@ -1,0 +1,222 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Navbar</title>
+
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				font-family: "Verdana"
+			}
+
+			nav{
+				background: #099;
+				color: #fff;
+				display: flex;
+				flex-wrap:wrap;
+				position: fixed;
+				top:0;
+				left:0;
+				right:0;
+			}
+
+			nav > .navBrand{
+				display: block;
+				padding: 1em;
+				color: inherit;
+				text-decoration: none;
+				font-size: 1.25em;
+				line-height: 0.55em;
+				font-weight: bold;
+			}
+
+			nav > .navMenu {
+				flex-grow: 1;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			nav > .navMenu > .menu0{
+				background: #099;
+				color: #fff;
+				display: flex;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			nav > .navMenu > .menu0 > li{
+				transition: 0.5s ease-in-out;
+			}
+
+			nav > .navMenu > .menu0 > li:hover{
+				background: #fff;
+				color: #099;
+			}
+
+			nav > .navMenu > .menu0 > li:hover .menu1{
+				display: block;
+			}
+
+			nav li > a{
+				display: block;
+				padding: 1em;
+				color: inherit;
+				text-decoration: none;
+			}
+
+			nav > .navMenu > .menu0 .menu1{
+				position: absolute;
+				list-style: none;
+				background: #0cc;
+				display: none;
+				padding:0;
+				border-top:1px solid #0cc;
+			}
+
+			nav > .navMenu > .menu0 .menu1 > li{
+				color: #fff;
+				border-bottom:1px solid #fff;
+				transition: 0.5s ease-in-out;
+			}
+
+			nav > .navMenu > .menu0 .menu1 > li:last-of-type{
+				border-bottom:1px solid #0cc;
+			}
+
+			nav > .navMenu > .menu0 .menu1 > li:hover{
+				
+				background: #fff;
+				color: #0cc;
+			}
+
+			nav > .navMenu > .navToggle {
+				display: none;
+				padding: 1em;
+				border: none;
+				background: none;
+				color: inherit;
+				cursor: pointer;
+			}
+
+			nav > .navMenu > .navToggle:before {
+				content: "+";
+			}
+
+			nav > .navMenu > .navToggle:hover{
+				background: #fff;
+				color: #099;
+			}
+
+			nav > .navMenu > .navToggle:hover:before {
+				content: "v";
+			}
+
+
+			.mainContent{
+				height:1000px;
+				margin:51px auto 0 auto;
+				width: calc(100% - 20px);
+				padding: 10px;
+				font-size: 10em;
+				word-break: break-all;
+			}
+
+			@media only screen and (max-width: 991px){
+				nav{
+					flex-flow: column wrap;
+					text-align: center;
+				}
+
+				nav > .navFiller{
+					display: none;
+				}
+								
+				nav > .navMenu {
+					flex-flow: column wrap;
+				}
+				nav > .navMenu > .menu0 {
+					width: calc(100%);
+					flex-flow: column wrap;
+					display: none;
+					border-top:1px solid #fff;
+				}
+
+				nav > .navMenu > .menu0 > li {
+					border-bottom:1px solid #fff;
+				}
+
+				nav > .navMenu > .menu0 > li:last-of-type{
+					border-bottom:1px solid #099;
+				}
+
+				nav > .navMenu > .navToggle {
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					z-index: 100;
+				}
+
+				nav > .navMenu:hover .menu0 {
+					display: flex;
+				}
+
+				nav > .navMenu > .menu0 .menu1{
+					position: relative;
+				}
+			}
+
+			@media only screen and (max-width: 575px){
+				nav{
+					text-align: left;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<a href="#home" class="navBrand">SCAVENTUM</a>
+			<div class="navMenu">
+				<div class="navToggle"></div>
+				<ul class="menu0">
+					<li><a href="#home">Home</a></li>
+					<li>
+						<a href="#services">Services</a>
+						<ul class="menu1">
+							<li><a href="#services/project-management">Project Management</a></li>
+							<li><a href="#services/web-development">Web Development</a></li>
+							<li><a href="#services/content-management">Content Management</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#about">About</a>
+						<ul class="menu1">
+							<li><a href="#about/project">Project</a></li>
+							<li><a href="#about/developer">Developer</a></li>
+						</ul>
+					</li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul class="menu0">
+					<li>
+						<a href="#profile">Profile</a>
+						<ul class="menu1">
+							<li><a href="#profile/settings">Settings</a></li>
+							<li><a href="#profile/signout">Sign Out</a></li>
+						</ul>
+					</li>
+					<li><a href="#help">Help</a></li>
+				</ul>
+			</div>
+		</nav>
+
+
+		<section>
+			<div class="container mainContent">
+				Lorem ipsum dolor sit amet.
+			</div>
+		</section>
+	</body>
+</html>
